@@ -1,0 +1,45 @@
+{
+    "name": "passwordreset",
+    "version": "1.0.0",
+    "scripts": {
+        "start": "ui5 serve --config=ui5.yaml  --open test/flpSandbox.html",
+        "build:ui": "run-s  build:uimodule",
+        "test": "run-s lint karma",
+        "karma-ci": "karma start karma-ci.conf.js",
+        "clearCoverage": "shx rm -rf coverage",
+        "karma": "run-s clearCoverage karma-ci",
+        "lint": "eslint .",
+        "deploy": "npm run build:ui && fiori deploy --config ui5-deploy.yaml && rimraf archive.zip",
+        "serve:uimodule": "ui5 serve --config=ui5.yaml",
+        "build:uimodule": "ui5 build --config=ui5.yaml --clean-dest --dest dist/",
+        "undeploy": "fiori undeploy --config ui5-deploy.yaml",
+        "deploy-test": "npm run build && fiori deploy --config ui5-deploy.yaml --testMode true"
+    },
+    "devDependencies": {
+        "@sap/ux-ui5-tooling": "^1.9.1",
+        "@ui5/cli": "^4",
+        "eslint": "^7.29.0",
+        "karma": "^6.3.4",
+        "karma-chrome-launcher": "^3.1.0",
+        "karma-coverage": "^2.0.3",
+        "karma-ui5": "^2.3.4",
+        "npm-run-all": "^4.1.5",
+        "shx": "^0.3.3",
+        "ui5-middleware-livereload": "^0.5.4",
+        "ui5-middleware-route-proxy": "*",
+        "ui5-task-nwabap-deployer": "*",
+        "rimraf": "^3.0.2",
+        "ui5-task-flatten-library": "0.2.5"
+    },
+    "ui5": {
+        "dependencies": [
+            "ui5-middleware-livereload",
+            "ui5-task-nwabap-deployer",
+            "ui5-middleware-route-proxy",
+            "ui5-task-flatten-library"
+        ]
+    },
+    "dependencies": {
+        "@sap/generator-fiori": "^1.9.1"
+    }
+}

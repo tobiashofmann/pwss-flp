@@ -1,0 +1,9 @@
+{
+	"applications": {},
+	"bootstrapPlugins": {
+		"passwordreset": {
+			"component": "de.itsfullofstars.passwordreset",
+			"url": "../../../../"
+		}
+	}
+}

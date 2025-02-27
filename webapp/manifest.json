@@ -1,0 +1,68 @@
+{
+	"_version": "1.5.0",
+	"sap.app": {
+		"_version": "1.3.0",
+		"id": "de.itsfullofstars.passwordreset",
+		"type": "component",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "0.0.1"
+		},
+		"title": "Password Reset",
+		"description": "user password reset self service FLP plugin",
+		"crossNavigation": {
+			"inbounds": {
+			"Shell-plugin": {
+				"signature": {
+					"parameters": {},
+					"additionalParameters": "allowed"
+				},
+				"semanticObject": "Shell",
+				"action": "plugin",
+				"hideLauncher":true
+				}
+			}
+		}
+	},
+	"sap.ui": {
+		"_version": "1.3.0",
+		"technology": "UI5",
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": []
+	},
+	"sap.ui5": {
+		"_version": "1.2.0",
+		"contentDensities": {
+			"compact": true,
+			"cozy": false
+		},
+		"models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "de.itsfullofstars.passwordreset.i18n.i18n"
+                }
+            }
+		},
+		"dependencies": {
+			"minUI5Version": "1.38.1",
+			"libs": {
+				"sap.ui.core": {
+					"minVersion": "1.38.1"
+				},
+				"sap.m": {
+					"minVersion": "1.38.1"
+				}
+			}
+		},
+		"componentName": "de.itsfullofstars.passwordreset"
+	},
+	"sap.flp": {
+		"type": "plugin",
+		"config": {}
+	}
+}
